@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace ParkingApplication
+﻿namespace ParkingApplication
 {
     internal class Car
     {
