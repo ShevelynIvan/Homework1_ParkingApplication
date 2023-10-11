@@ -1,4 +1,6 @@
-﻿namespace ParkingApplication
+﻿using System.Drawing;
+
+namespace ParkingApplication
 {
     internal class Car
     {
@@ -10,7 +12,7 @@
         /// <summary>
         /// Property Id of car 
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         /// <summary>
         /// Brand of car
@@ -43,7 +45,7 @@
         public DateTime DepartureTime { get; set; }
 
         /// <summary>
-        /// Constructor with parameters 
+        /// Constructor with full parameters 
         /// </summary>
         /// <param name="carBrand">Brand of car</param>
         /// <param name="model">Model of car</param>
@@ -55,6 +57,21 @@
             Brand = carBrand;
             Model = model;
             _color = color;
+            Number = number;
+        }
+
+        /// <summary>
+        /// Constructor with parameters. Color set to white.
+        /// </summary>
+        /// <param name="carBrand">Brand of car</param>
+        /// <param name="model">Model of car</param>
+        /// <param name="number">Number of car</param>
+        public Car(CarBrands carBrand, string model, string number)
+        {
+            Id = Guid.NewGuid();
+            _color = new Color();
+            Brand = carBrand;
+            Model = model;
             Number = number;
         }
 
